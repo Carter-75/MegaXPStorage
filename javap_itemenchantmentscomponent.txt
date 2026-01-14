@@ -1,0 +1,20 @@
+Compiled from "ItemEnchantmentsComponent.java"
+public class net.minecraft.component.type.ItemEnchantmentsComponent implements net.minecraft.item.tooltip.TooltipAppender {
+  public static final net.minecraft.component.type.ItemEnchantmentsComponent DEFAULT;
+  public static final com.mojang.serialization.Codec<net.minecraft.component.type.ItemEnchantmentsComponent> CODEC;
+  public static final net.minecraft.network.codec.PacketCodec<net.minecraft.network.RegistryByteBuf, net.minecraft.component.type.ItemEnchantmentsComponent> PACKET_CODEC;
+  final it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.registry.entry.RegistryEntry<net.minecraft.enchantment.Enchantment>> enchantments;
+  final boolean showInTooltip;
+  net.minecraft.component.type.ItemEnchantmentsComponent(it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<net.minecraft.registry.entry.RegistryEntry<net.minecraft.enchantment.Enchantment>>, boolean);
+  public int getLevel(net.minecraft.registry.entry.RegistryEntry<net.minecraft.enchantment.Enchantment>);
+  public void appendTooltip(net.minecraft.item.Item$TooltipContext, java.util.function.Consumer<net.minecraft.text.Text>, net.minecraft.item.tooltip.TooltipType);
+  public net.minecraft.component.type.ItemEnchantmentsComponent withShowInTooltip(boolean);
+  public java.util.Set<net.minecraft.registry.entry.RegistryEntry<net.minecraft.enchantment.Enchantment>> getEnchantments();
+  public java.util.Set<it.unimi.dsi.fastutil.objects.Object2IntMap$Entry<net.minecraft.registry.entry.RegistryEntry<net.minecraft.enchantment.Enchantment>>> getEnchantmentEntries();
+  public int getSize();
+  public boolean isEmpty();
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  public java.lang.String toString();
+  static {};
+}

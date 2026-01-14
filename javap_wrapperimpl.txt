@@ -1,0 +1,7 @@
+Compiled from "RegistryWrapper.java"
+public interface net.minecraft.registry.RegistryWrapper$Impl<T> extends net.minecraft.registry.RegistryWrapper<T>, net.minecraft.registry.entry.RegistryEntryOwner<T> {
+  public abstract net.minecraft.registry.RegistryKey<? extends net.minecraft.registry.Registry<? extends T>> getRegistryKey();
+  public abstract com.mojang.serialization.Lifecycle getLifecycle();
+  public default net.minecraft.registry.RegistryWrapper$Impl<T> withFeatureFilter(net.minecraft.resource.featuretoggle.FeatureSet);
+  public default net.minecraft.registry.RegistryWrapper$Impl<T> withPredicateFilter(java.util.function.Predicate<T>);
+}

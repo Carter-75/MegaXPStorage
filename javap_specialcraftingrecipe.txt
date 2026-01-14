@@ -1,0 +1,7 @@
+Compiled from "SpecialCraftingRecipe.java"
+public abstract class net.minecraft.recipe.SpecialCraftingRecipe implements net.minecraft.recipe.CraftingRecipe {
+  public net.minecraft.recipe.SpecialCraftingRecipe(net.minecraft.recipe.book.CraftingRecipeCategory);
+  public boolean isIgnoredInRecipeBook();
+  public net.minecraft.item.ItemStack getResult(net.minecraft.registry.RegistryWrapper$WrapperLookup);
+  public net.minecraft.recipe.book.CraftingRecipeCategory getCategory();
+}

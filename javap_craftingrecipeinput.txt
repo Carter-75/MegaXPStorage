@@ -1,0 +1,18 @@
+Compiled from "CraftingRecipeInput.java"
+public class net.minecraft.recipe.input.CraftingRecipeInput implements net.minecraft.recipe.input.RecipeInput {
+  public static final net.minecraft.recipe.input.CraftingRecipeInput EMPTY;
+  public static net.minecraft.recipe.input.CraftingRecipeInput create(int, int, java.util.List<net.minecraft.item.ItemStack>);
+  public static net.minecraft.recipe.input.CraftingRecipeInput$Positioned createPositioned(int, int, java.util.List<net.minecraft.item.ItemStack>);
+  public net.minecraft.item.ItemStack getStackInSlot(int);
+  public net.minecraft.item.ItemStack getStackInSlot(int, int);
+  public int getSize();
+  public boolean isEmpty();
+  public net.minecraft.recipe.RecipeMatcher getRecipeMatcher();
+  public java.util.List<net.minecraft.item.ItemStack> getStacks();
+  public int getStackCount();
+  public int getWidth();
+  public int getHeight();
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  static {};
+}

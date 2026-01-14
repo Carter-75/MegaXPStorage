@@ -1,0 +1,7 @@
+Compiled from "RegistryEntryLookup.java"
+public interface net.minecraft.registry.RegistryEntryLookup<T> {
+  public abstract java.util.Optional<net.minecraft.registry.entry.RegistryEntry$Reference<T>> getOptional(net.minecraft.registry.RegistryKey<T>);
+  public default net.minecraft.registry.entry.RegistryEntry$Reference<T> getOrThrow(net.minecraft.registry.RegistryKey<T>);
+  public abstract java.util.Optional<net.minecraft.registry.entry.RegistryEntryList$Named<T>> getOptional(net.minecraft.registry.tag.TagKey<T>);
+  public default net.minecraft.registry.entry.RegistryEntryList$Named<T> getOrThrow(net.minecraft.registry.tag.TagKey<T>);
+}

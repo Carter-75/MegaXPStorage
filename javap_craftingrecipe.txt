@@ -1,0 +1,5 @@
+Compiled from "CraftingRecipe.java"
+public interface net.minecraft.recipe.CraftingRecipe extends net.minecraft.recipe.Recipe<net.minecraft.recipe.input.CraftingRecipeInput> {
+  public default net.minecraft.recipe.RecipeType<?> getType();
+  public abstract net.minecraft.recipe.book.CraftingRecipeCategory getCategory();
+}

@@ -1,0 +1,9 @@
+Compiled from "RegistryWrapper.java"
+public interface net.minecraft.registry.RegistryWrapper$WrapperLookup {
+  public abstract java.util.stream.Stream<net.minecraft.registry.RegistryKey<? extends net.minecraft.registry.Registry<?>>> streamAllRegistryKeys();
+  public abstract <T> java.util.Optional<net.minecraft.registry.RegistryWrapper$Impl<T>> getOptionalWrapper(net.minecraft.registry.RegistryKey<? extends net.minecraft.registry.Registry<? extends T>>);
+  public default <T> net.minecraft.registry.RegistryWrapper$Impl<T> getWrapperOrThrow(net.minecraft.registry.RegistryKey<? extends net.minecraft.registry.Registry<? extends T>>);
+  public default <V> net.minecraft.registry.RegistryOps<V> getOps(com.mojang.serialization.DynamicOps<V>);
+  public default net.minecraft.registry.RegistryEntryLookup$RegistryLookup createRegistryLookup();
+  public static net.minecraft.registry.RegistryWrapper$WrapperLookup of(java.util.stream.Stream<net.minecraft.registry.RegistryWrapper$Impl<?>>);
+}

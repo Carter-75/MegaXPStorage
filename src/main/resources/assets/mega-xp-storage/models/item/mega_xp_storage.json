@@ -1,0 +1,15 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "minecraft:item/enchanted_book"
+	},
+	"display": {
+		"gui": { "scale": [ 1.2, 1.2, 1.2 ] },
+		"ground": { "scale": [ 1.2, 1.2, 1.2 ] },
+		"fixed": { "scale": [ 1.2, 1.2, 1.2 ] },
+		"thirdperson_righthand": { "scale": [ 1.2, 1.2, 1.2 ] },
+		"thirdperson_lefthand": { "scale": [ 1.2, 1.2, 1.2 ] },
+		"firstperson_righthand": { "scale": [ 1.2, 1.2, 1.2 ] },
+		"firstperson_lefthand": { "scale": [ 1.2, 1.2, 1.2 ] }
+	}
+}

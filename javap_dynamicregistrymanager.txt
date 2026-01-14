@@ -1,0 +1,14 @@
+Compiled from "DynamicRegistryManager.java"
+public interface net.minecraft.registry.DynamicRegistryManager extends net.minecraft.registry.RegistryWrapper$WrapperLookup {
+  public static final org.slf4j.Logger LOGGER;
+  public static final net.minecraft.registry.DynamicRegistryManager$Immutable EMPTY;
+  public abstract <E> java.util.Optional<net.minecraft.registry.Registry<E>> getOptional(net.minecraft.registry.RegistryKey<? extends net.minecraft.registry.Registry<? extends E>>);
+  public default <T> java.util.Optional<net.minecraft.registry.RegistryWrapper$Impl<T>> getOptionalWrapper(net.minecraft.registry.RegistryKey<? extends net.minecraft.registry.Registry<? extends T>>);
+  public default <E> net.minecraft.registry.Registry<E> get(net.minecraft.registry.RegistryKey<? extends net.minecraft.registry.Registry<? extends E>>);
+  public abstract java.util.stream.Stream<net.minecraft.registry.DynamicRegistryManager$Entry<?>> streamAllRegistries();
+  public default java.util.stream.Stream<net.minecraft.registry.RegistryKey<? extends net.minecraft.registry.Registry<?>>> streamAllRegistryKeys();
+  public static net.minecraft.registry.DynamicRegistryManager$Immutable of(net.minecraft.registry.Registry<? extends net.minecraft.registry.Registry<?>>);
+  public default net.minecraft.registry.DynamicRegistryManager$Immutable toImmutable();
+  public default com.mojang.serialization.Lifecycle getRegistryLifecycle();
+  static {};
+}

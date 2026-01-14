@@ -1,0 +1,19 @@
+Compiled from "Recipe.java"
+public interface net.minecraft.recipe.Recipe<T extends net.minecraft.recipe.input.RecipeInput> {
+  public static final com.mojang.serialization.Codec<net.minecraft.recipe.Recipe<?>> CODEC;
+  public static final net.minecraft.network.codec.PacketCodec<net.minecraft.network.RegistryByteBuf, net.minecraft.recipe.Recipe<?>> PACKET_CODEC;
+  public abstract boolean matches(T, net.minecraft.world.World);
+  public abstract net.minecraft.item.ItemStack craft(T, net.minecraft.registry.RegistryWrapper$WrapperLookup);
+  public abstract boolean fits(int, int);
+  public abstract net.minecraft.item.ItemStack getResult(net.minecraft.registry.RegistryWrapper$WrapperLookup);
+  public default net.minecraft.util.collection.DefaultedList<net.minecraft.item.ItemStack> getRemainder(T);
+  public default net.minecraft.util.collection.DefaultedList<net.minecraft.recipe.Ingredient> getIngredients();
+  public default boolean isIgnoredInRecipeBook();
+  public default boolean showNotification();
+  public default java.lang.String getGroup();
+  public default net.minecraft.item.ItemStack createIcon();
+  public abstract net.minecraft.recipe.RecipeSerializer<?> getSerializer();
+  public abstract net.minecraft.recipe.RecipeType<?> getType();
+  public default boolean isEmpty();
+  static {};
+}
