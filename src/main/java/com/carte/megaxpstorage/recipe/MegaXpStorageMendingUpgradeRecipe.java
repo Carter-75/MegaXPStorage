@@ -8,6 +8,7 @@ import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.recipe.SpecialRecipeSerializer;
@@ -16,6 +17,7 @@ import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 public class MegaXpStorageMendingUpgradeRecipe extends SpecialCraftingRecipe {
@@ -65,6 +67,28 @@ public class MegaXpStorageMendingUpgradeRecipe extends SpecialCraftingRecipe {
 		RegistryEntry<Enchantment> mending = registries.getWrapperOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.MENDING);
 		out.addEnchantment(mending, 1);
 		return out;
+	}
+
+	@Override
+	public ItemStack getResult(RegistryWrapper.WrapperLookup registries) {
+		ItemStack out = new ItemStack(MegaXpStorageMod.MEGA_XP_STORAGE);
+		RegistryEntry<Enchantment> mending = registries.getWrapperOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.MENDING);
+		out.addEnchantment(mending, 1);
+		return out;
+	}
+
+	@Override
+	public DefaultedList<Ingredient> getIngredients() {
+		DefaultedList<Ingredient> ingredients = DefaultedList.ofSize(9, Ingredient.EMPTY);
+		for (int slot = 0; slot < 9; slot++) {
+			ingredients.set(slot, slot == 4 ? Ingredient.ofItems(MegaXpStorageMod.MEGA_XP_STORAGE) : Ingredient.ofItems(Items.ENCHANTED_BOOK));
+		}
+		return ingredients;
+	}
+
+	@Override
+	public boolean isIgnoredInRecipeBook() {
+		return false;
 	}
 
 	@Override
