@@ -29,7 +29,7 @@ public class MegaXpStorageCreateRecipe extends SpecialCraftingRecipe {
 
 		for (int y = 0; y < 3; y++) {
 			for (int x = 0; x < 3; x++) {
-				ItemStack stack = input.getStackInSlot(x + y * 3);
+				ItemStack stack = input.getStackInSlot(x, y);
 				boolean isCenter = x == 1 && y == 1;
 
 				if (isCenter) {

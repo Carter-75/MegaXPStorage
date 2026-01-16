@@ -33,7 +33,7 @@ public class MegaXpStorageMendingUpgradeRecipe extends SpecialCraftingRecipe {
 			return false;
 		}
 
-		ItemStack center = input.getStackInSlot(4);
+		ItemStack center = input.getStackInSlot(1, 1);
 		if (!center.isOf(MegaXpStorageMod.MEGA_XP_STORAGE)) {
 			return false;
 		}
@@ -42,19 +42,21 @@ public class MegaXpStorageMendingUpgradeRecipe extends SpecialCraftingRecipe {
 				.getWrapperOrThrow(RegistryKeys.ENCHANTMENT)
 				.getOrThrow(Enchantments.MENDING);
 
-		for (int slot = 0; slot < 9; slot++) {
-			if (slot == 4) {
-				continue;
-			}
+		for (int y = 0; y < 3; y++) {
+			for (int x = 0; x < 3; x++) {
+				if (x == 1 && y == 1) {
+					continue;
+				}
 
-			ItemStack stack = input.getStackInSlot(slot);
-			if (!stack.isOf(Items.ENCHANTED_BOOK)) {
-				return false;
-			}
+				ItemStack stack = input.getStackInSlot(x, y);
+				if (!stack.isOf(Items.ENCHANTED_BOOK)) {
+					return false;
+				}
 
-			ItemEnchantmentsComponent stored = stack.get(DataComponentTypes.STORED_ENCHANTMENTS);
-			if (stored == null || stored.getLevel(mending) <= 0) {
-				return false;
+				ItemEnchantmentsComponent stored = stack.get(DataComponentTypes.STORED_ENCHANTMENTS);
+				if (stored == null || stored.getLevel(mending) <= 0) {
+					return false;
+				}
 			}
 		}
 
@@ -63,7 +65,7 @@ public class MegaXpStorageMendingUpgradeRecipe extends SpecialCraftingRecipe {
 
 	@Override
 	public ItemStack craft(CraftingRecipeInput input, RegistryWrapper.WrapperLookup registries) {
-		ItemStack out = input.getStackInSlot(4).copy();
+		ItemStack out = input.getStackInSlot(1, 1).copy();
 		RegistryEntry<Enchantment> mending = registries.getWrapperOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.MENDING);
 		out.addEnchantment(mending, 1);
 		return out;
